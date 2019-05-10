@@ -2,7 +2,7 @@
 [JSS](https://cssinjs.org/) plugin for Riot.JS
 JSS is CSS-in-JS. It allows you to write styles in javascript object syntax.
 ![Status](https://img.shields.io/badge/Status-Beta-green.svg)
-![version](https://img.shields.io/badge/Version-1.0.0#beta.1-yellow.svg)
+![version](https://img.shields.io/badge/Version-1.0.0beta.1-yellow.svg)
 ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
 ## Installation
 
