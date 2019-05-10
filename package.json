@@ -1,6 +1,6 @@
 {
   "name": "riot-jss",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.3",
   "description": "JSS plugin for Riot.js",
   "main": "index.js",
   "scripts": {

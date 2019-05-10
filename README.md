@@ -4,7 +4,7 @@ JSS is CSS-in-JS. It allows you to write styles in javascript object syntax.
 
 
 ![Status](https://img.shields.io/badge/Status-Beta-green.svg)
-![version](https://img.shields.io/badge/Version-1.0.0beta.2-green.svg)
+![version](https://img.shields.io/badge/Version-1.0.0beta.3-green.svg)
 ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
 
 
@@ -49,8 +49,8 @@ install(withJSS)
 ``` 
 
 ## Writing styles
-JSS is just a javascript object. [Follow official JSS documentation](https://cssinjs.org/jss-syntax).
-To make the JSS work in scope of a riot component, just add a property called `styles` into your component exports:
+In order to make the JSS work in scope of a riot component, just add a property called `styles` into your component exports.
+Property `styles` must be [a valid JSS object](https://cssinjs.org/jss-syntax).
 ```javascript
 export default{
   styles,
