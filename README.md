@@ -71,6 +71,9 @@ export default {
 }
 ```
 
+## Licence
+MIT
+
 
 
 
