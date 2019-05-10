@@ -16,7 +16,7 @@ This plugin provides following functionality in a component scope:
 3. Method `setStyles({...styles})` - set new styles and update component
 
 ## Plugin initialization
-There are two ways to start using this plugin
+There are two ways to start using this plugin:
 
 1. Install plugin globbaly
 ```javascript
@@ -41,6 +41,16 @@ install(withJSS)
   </script>
 </with-jss>
 ``` 
+
+## Writing styles
+JSS is just a javascript object. [Follow official JSS documentation](https://cssinjs.org/jss-syntax).
+To make the JSS work in scope of a riot component, just add a property called `styles` into your component exports:
+```javascript
+export default{
+  styles,
+  ...
+}
+```
 
 ## Example
 
