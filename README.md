@@ -21,7 +21,7 @@ This plugin provides following functionality in a component scope:
 2. Method `jss({ className: true})` - switches classes based on a condition.
 3. Method `setStyles({...styles})` - set new styles and update component
 
-## Plugin initialization
+#### Global plugin initialization
 
 Install the plugin globbaly:
 ```javascript
@@ -30,7 +30,7 @@ import withJSS from 'riot-jss'
 install(withJSS)
 //
 ```
-## Alternatively
+#### Local plugin initialization
 Decorate component's exports:
 ```html
 <with-jss>
@@ -48,7 +48,7 @@ Decorate component's exports:
 </with-jss>
 ``` 
 
-## Writing styles
+#### Writing styles
 In order to make the JSS work in scope of a riot component, just add a property called `styles` into your component exports.
 Property `styles` must be [a valid JSS object](https://cssinjs.org/jss-syntax).
 ```javascript
@@ -58,7 +58,7 @@ export default{
 }
 ```
 
-## Example
+#### An example
 
 ```html
 <my-comonent>
@@ -87,7 +87,7 @@ export default {
 }
 ```
 
-## Licence
+#### Licence
 MIT
 
 
