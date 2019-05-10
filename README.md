@@ -22,16 +22,16 @@ This plugin provides following functionality in a component scope:
 3. Method `setStyles({...styles})` - set new styles and update component
 
 ## Plugin initialization
-There are two ways to start using this plugin:
 
-1. Install plugin globbaly
+Install the plugin globbaly:
 ```javascript
 import {install} from 'riot'
 import withJSS from 'riot-jss'
 install(withJSS)
 //
 ```
-2. Decorate your component exports
+## Alternatively
+Decorate component's exports:
 ```html
 <with-jss>
   <div class={jss({ myClass: true })}>
