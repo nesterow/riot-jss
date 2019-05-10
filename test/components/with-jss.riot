@@ -1,0 +1,13 @@
+<with-jss>
+  <div class={jss({ myClass: true, undefinedClass: true })}>
+    Black Background
+  </div>
+  <script>
+    import styles from './with-jss.js'
+    import withJSS from '../..'
+    export default withJSS({
+      styles,
+      state: {},
+    })
+  </script>
+</with-jss>

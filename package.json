@@ -1,0 +1,51 @@
+{
+  "name": "riot-jss",
+  "version": "1.0.0-beta.1",
+  "description": "JSS plugin for Riot.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r esm test/*.js"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nesterow/riot-jss.git"
+  },
+  "keywords": [
+    "riot",
+    "jss",
+    "ssr",
+    "Riot.js",
+    "components"
+  ],
+  "peerDependencies": {
+    "riot": "^4.0.0-rc.6"
+  },
+  "author": "Anton Nesterov <arch.nesterov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nesterow/riot-jss/issues"
+  },
+  "homepage": "https://github.com/nesterow/riot-jss#readme",
+  "devDependencies": {
+    "@riotjs/compiler": "^4.0.0",
+    "@riotjs/ssr": "^4.0.0-rc.2",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-riot": "^1.0.0",
+    "esm": "^3.2.22",
+    "jsdom": "15.0.0",
+    "jsdom-global": "3.0.2",
+    "mocha": "^6.1.4",
+    "sinon": "^7.3.2",
+    "sinon-chai": "^3.3.0"
+  },
+  "dependencies": {
+    "riot": "^4.0.0-rc.6",
+    "jss": "^9.8.7",
+    "jss-preset-default": "^4.5.0",
+    "jss-plugin-nested": "^10.0.0-alpha.7"
+  }
+}
