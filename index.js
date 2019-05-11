@@ -5,7 +5,9 @@ JSS.setup(jssPreset())
 JSS.use(jssPluginNested)
 
 const getClasses = (jssObject) => {
-  const {classes} = JSS.createStyleSheet(jssObject).attach()
+  const Styles = JSS.createStyleSheet(jssObject)
+  const {classes} = Styles
+  if (typeof window !== 'undefined') Styles.attach();
   return classes
 }
 
@@ -21,18 +23,18 @@ const jss = function(obj) {
 
 module.exports = function(riotInstance, initialStyles) {
 
+  riotInstance.classes = riotInstance.classes || {} 
+  riotInstance.styles = riotInstance.styles || initialStyles || {}
+
   riotInstance.jss = jss.bind(riotInstance)
 
-  if (initialStyles) {
-    riotInstance.styles = getClasses(initialStyles)
-  }
   if (riotInstance.styles) {
-    riotInstance.classes = getClasses(riotInstance.styles)
+    riotInstance.classes = getClasses(riotInstance.styles) || {}
   }
 
   riotInstance.setStyles = function(jssObj) {
     this.styles = getClasses(jssObj)
-    this.classes = getClasses(this.styles)
+    this.classes = getClasses(this.styles) || {}
     this.update()
   }
   .bind(riotInstance)

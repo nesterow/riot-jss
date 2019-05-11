@@ -1,6 +1,6 @@
 import JSDOMGlobal from 'jsdom-global'
 import ssr from '@riotjs/ssr/register'
-import {mount, register, install} from 'riot'
+import {mount, register, install, component} from 'riot'
 import {expect, use} from 'chai'
 import sinonChai from 'sinon-chai'
 import {spy} from 'sinon'
@@ -82,6 +82,35 @@ describe('riot-jss', () => {
 
     document.body.appendChild(root)
     const instance = mount(root, {}, 'with-jss') [0]
+    
+    expect(typeof instance.jss).to.be.equal('function')
+    expect(typeof instance.setStyles).to.be.equal('function')
+    expect(typeof instance.styles).to.be.equal('object')
+    expect(typeof instance.classes).to.be.equal('object')
+
+  })
+
+  it('it works with loops', () => {
+    const MyComponent = require('./components/with-jss-and-loops.riot').default
+    register('with-jss-and-loops', MyComponent)
+    const root = document.createElement('div')
+
+    document.body.appendChild(root)
+    const instance = mount(root, {}, 'with-jss-and-loops') [0]
+    
+    expect(typeof instance.jss).to.be.equal('function')
+    expect(typeof instance.setStyles).to.be.equal('function')
+    expect(typeof instance.styles).to.be.equal('object')
+    expect(typeof instance.classes).to.be.equal('object')
+
+  })
+
+  it('it works with `component` API', () => {
+    const MyComponent = require('./components/with-jss-and-loops.riot').default
+    const root = document.createElement('div')
+
+    document.body.appendChild(root)
+    const instance = component(MyComponent)(root, {})
     
     expect(typeof instance.jss).to.be.equal('function')
     expect(typeof instance.setStyles).to.be.equal('function')
