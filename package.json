@@ -20,9 +20,6 @@
     "Riot.js",
     "components"
   ],
-  "peerDependencies": {
-    "riot": "^4.0.0-rc.6"
-  },
   "author": "Anton Nesterov <arch.nesterov@gmail.com>",
   "license": "MIT",
   "bugs": {
