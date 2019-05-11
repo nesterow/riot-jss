@@ -1,0 +1,17 @@
+<with-jss-and-loops>
+  <div class="{jss({ myClass: true })} {classes.otherClass}">
+    Black Background
+    <p each={item in items} class={classes.otherClass}>
+      <span class={classes.otherClass}>{item}</span>
+    </p>
+  </div>
+  <script>
+    import styles from './with-jss.js'
+    import withJSS from '../..'
+    export default withJSS({
+      styles,
+      state: {},
+      items: [1,2,3,4,5],
+    })
+  </script>
+</with-jss-and-loops>
