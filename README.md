@@ -1,7 +1,7 @@
 # riot-jss
 [JSS](https://cssinjs.org/) plugin for RiotJS.
 
-JSS is CSS-in-JS. It allows you to write styles in javascript object syntax.
+JSS is css-in-js. It allows you to write styles in javascript object syntax.
 
 
 ![Status](https://img.shields.io/badge/Status-Beta-green.svg)
