@@ -3,7 +3,6 @@ import ssr from '@riotjs/ssr/register'
 import {mount, register, install, component} from 'riot'
 import {expect, use} from 'chai'
 import sinonChai from 'sinon-chai'
-import {spy} from 'sinon'
 import withJSS from '../'
 
 describe('riot-jss', () => {
@@ -37,25 +36,7 @@ describe('riot-jss', () => {
     expect(instance.jss({bodyClass: true})).to.include('bodyClass-')
   })
 
-  it('it works as a plugin', () => {
-    const MyComponent = require('./components/with-jss-global.riot').default
 
-    install(function(componentInstance){
-      withJSS(componentInstance)
-    })
-
-    register('with-jss-global', MyComponent)
-    const root = document.createElement('div')
-
-    document.body.appendChild(root)
-    const instance = mount(root, {}, 'with-jss-global') [0]
-    
-    expect(typeof instance.jss).to.be.equal('function')
-    expect(typeof instance.setStyles).to.be.equal('function')
-    expect(typeof instance.styles).to.be.equal('object')
-    expect(typeof instance.classes).to.be.equal('object')
-
-  })
 
   it('it works as DI on a component exports', () => {
     const MyComponent = require('./components/with-jss-global.riot').default
@@ -118,5 +99,38 @@ describe('riot-jss', () => {
     expect(typeof instance.classes).to.be.equal('object')
 
   })
+
+  it('it works with slots and `component` API', () => {
+    const Component = require('./components/with-slots-and-loops.riot').default
+    const root = document.createElement('section')
+
+    document.body.appendChild(root)
+    
+    const instance = component(Component)(root)
+
+    expect(typeof instance.jss).to.be.equal('function')
+    expect(typeof instance.setStyles).to.be.equal('function')
+    expect(typeof instance.styles).to.be.equal('object')
+    expect(typeof instance.classes).to.be.equal('object')
+
+  })
+
+  it('it works as a plugin', () => {
+    const MyComponent = require('./components/with-jss-global.riot').default
+
+    install(withJSS)
+
+    register('with-jss-global', MyComponent)
+    const root = document.createElement('div')
+
+    document.body.appendChild(root)
+    const instance = mount(root, {}, 'with-jss-global') [0]
+    
+    expect(typeof instance.jss).to.be.equal('function')
+    expect(typeof instance.setStyles).to.be.equal('function')
+    expect(typeof instance.styles).to.be.equal('object')
+    expect(typeof instance.classes).to.be.equal('object')
+  })
+
 
 })
