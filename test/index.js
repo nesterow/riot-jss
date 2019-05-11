@@ -108,11 +108,6 @@ describe('riot-jss', () => {
     
     const instance = component(Component)(root)
 
-    expect(typeof instance.jss).to.be.equal('function')
-    expect(typeof instance.setStyles).to.be.equal('function')
-    expect(typeof instance.styles).to.be.equal('object')
-    expect(typeof instance.classes).to.be.equal('object')
-
   })
 
   it('it works as a plugin', () => {
