@@ -7,7 +7,7 @@ JSS.use(jssPluginNested)
 const getClasses = (jssObject) => {
   const Styles = JSS.createStyleSheet(jssObject)
   const {classes} = Styles
-  if (typeof window !== 'undefined') Styles.attach();
+  Styles.attach()
   return [classes, Styles]
 }
 
