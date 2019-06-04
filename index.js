@@ -8,7 +8,7 @@ const getClasses = (jssObject) => {
   const Styles = JSS.createStyleSheet(jssObject)
   const {classes} = Styles
   if (typeof window !== 'undefined') Styles.attach();
-  return classes
+  return [classes, Styles]
 }
 
 const jss = function(obj) {
@@ -25,16 +25,19 @@ module.exports = function(riotInstance, initialStyles) {
 
   riotInstance.classes = riotInstance.classes || {} 
   riotInstance.styles = riotInstance.styles || initialStyles || {}
-
   riotInstance.jss = jss.bind(riotInstance)
 
   if (riotInstance.styles) {
-    riotInstance.classes = getClasses(riotInstance.styles) || {}
+    const [classes = {}, stylesheet = {}] = getClasses(riotInstance.styles)
+    riotInstance.classes = classes
+    riotInstance.stylesheet = stylesheet
   }
 
   riotInstance.setStyles = function(jssObj) {
-    this.styles = getClasses(jssObj)
-    this.classes = getClasses(this.styles) || {}
+    this.styles = jssObj
+    const [classes = {}, stylesheet = {}] = getClasses(this.styles)
+    this.classes = classes
+    this.stylesheet = stylesheet
     this.update()
   }
   .bind(riotInstance)
