@@ -4,7 +4,7 @@
 JSS is css-in-js. It allows you to write styles in javascript object syntax.
 
 [![Build Status](https://travis-ci.org/nesterow/riot-jss.svg?branch=master)](https://travis-ci.org/nesterow/riot-jss)
-![version](https://img.shields.io/badge/Version-1.0.1-green.svg)
+![version](https://img.shields.io/badge/Version-1.0.x-green.svg)
 ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
 
 
