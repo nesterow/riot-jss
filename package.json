@@ -1,6 +1,6 @@
 {
   "name": "riot-jss",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "JSS plugin for Riot.js",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/nesterow/riot-jss#readme",
   "devDependencies": {
-    "@riotjs/compiler": "^4.3.8",
+    "@riotjs/compiler": "^4.3.9",
     "@riotjs/ssr": "^4.1.0",
     "chai": "^4.2.0",
     "eslint": "^6.0.1",
@@ -40,7 +40,7 @@
     "sinon-chai": "^3.3.0"
   },
   "dependencies": {
-    "riot": "4.3.7",
+    "riot": "4.3.8",
     "jss": "^9.8.7",
     "jss-preset-default": "^4.5.0",
     "jss-plugin-nested": "^10.0.0-alpha.7"
