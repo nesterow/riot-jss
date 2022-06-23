@@ -33,7 +33,7 @@
     "eslint": "^6.0.1",
     "eslint-config-riot": "^2.0.0",
     "esm": "^3.2.25",
-    "jsdom": "15.1.1",
+    "jsdom": "16.5.0",
     "jsdom-global": "3.0.2",
     "mocha": "^6.2.0",
     "sinon": "^7.3.2",
